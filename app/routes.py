@@ -39,7 +39,7 @@ def create_validation():
     if response.status_code == 200:
         document_validation = json.loads(response.text)
         validation_id = document_validation.get("validation_id","")
-        session['validation_id'] = validation_id
+        # session['validation_id'] = validation_id
 
         # Aqui va el codigo para subir la foto de la id frontal
 
