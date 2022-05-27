@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prueba Truora</title>
-</head>
-<body>
-  <button id="start-camera">Start Camera</button>
-  <video id="video" width="320" height="240" autoplay></video>
-  <button id="click-photo">Click Photo</button>
-  <canvas id="canvas" width="320" height="240"></canvas>
-</body>
-<script>
-  let camera_button = document.querySelector("#start-camera");
-  let video = document.querySelector("#video");
-  let click_button = document.querySelector("#click-photo");
-  let canvas = document.querySelector("#canvas");
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba Truora</title>
+    <link rel="stylesheet" href="../static/css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Validación de documento</h1>
+      <div class="form-container">
+        <form action="" class="form">
+          <div>
+            
+            <label for="select-country" class="label">Country</label>
+            <div class="select-country input">
+              <label>
+                <input type="radio" name="test" value="ALL" />
+                <img
+                  src="https://hatscripts.github.io/circle-flags/flags/xx.svg"
+                />
+              </label>
 
-  camera_button.addEventListener('click', async function() {
-      let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-    video.srcObject = stream;
-  });
+              <label>
+                <input type="radio" name="test" value="CO" checked />
+                <img
+                  src="https://hatscripts.github.io/circle-flags/flags/co.svg"
+                />
+              </label>
 
-  click_button.addEventListener('click', function() {
-      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-      let image_data_url = canvas.toDataURL('image/jpeg');
+              <label>
+                <input type="radio" name="test" value="CL" />
+                <img
+                  src="https://hatscripts.github.io/circle-flags/flags/cl.svg"
+                />
+              </label>
 
-      // data url of the image
-      console.log(image_data_url);
-  });
-</script>
+              <label>
+                <input type="radio" name="test" value="MX" />
+                <img
+                  src="https://hatscripts.github.io/circle-flags/flags/mx.svg"
+                />
+              </label>
+
+              <label>
+                <input type="radio" name="test" value="BR" />
+                <img
+                  src="https://hatscripts.github.io/circle-flags/flags/br.svg"
+                />
+              </label>
+
+              <label>
+                <input type="radio" name="test" value="PE" />
+                <img
+                  src="https://hatscripts.github.io/circle-flags/flags/pe.svg"
+                />
+              </label>
+            </div>
+
+            <label for="document-type" class="label">Document type</label>
+            <Select id="document-type" class="input">
+              <option value="national-id">National Id</option>
+              <option value="passport">Passport</option>
+              <option value="foreign-id">Foreing Id</option>
+              <option value="code">Code</option>
+              <option value="auto">Auto</option>
+              <option value="driver-license">Driver license</option>
+              <option value="general-registration">General registration</option>
+              <option value="pep">Pep</option>
+              <option value="invoice">invoice</option>
+            </Select>
+
+            <label for="authorized" class="label input">
+            <input
+              type="checkbox"
+              id="user_authorized"
+            />
+            Authorized
+            </label>
+          </div>
+
+          <input type="submit" value="Save" class="btn-primary btn-login" />
+        </form>
+      </div>
+      <div class="camera">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
+      </div>
+      <canvas id="canvas"> </canvas>
+      <div class="output">
+        <img id="photo" alt="The screen capture will appear in this box." />
+      </div>
+    </div>
+  </body>
+  <script src="../static/js/index.js"></script>
 </html>
 
 <!--

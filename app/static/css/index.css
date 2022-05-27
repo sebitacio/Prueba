@@ -1,0 +1,147 @@
+:root {
+  --very-light-pink: #c7c7c7;
+  --text-input-fild: #f7f7f7;
+  --hospital-green: #acd9b2;
+  --white: #ffffff;
+  --black: #000000;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+  }
+
+#video {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  width: 320px;
+  height: 240px;
+}
+
+#photo {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  width: 320px;
+  height: 240px;
+}
+
+#canvas {
+  display: none;
+}
+
+.camera {
+  width: 340px;
+  display: inline-block;
+}
+
+.output {
+  width: 340px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#startbutton {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 32px;
+  background-color: rgba(0, 150, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  color: rgba(255, 255, 255, 1);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 300px;
+}
+.title {
+  font-size: var(--lg);
+  margin-bottom: 32px;
+  text-align: start;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form div {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  font-size: var(--sm);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.input {
+  margin-bottom: 12px;
+}
+.input-name,
+.input-passw,
+.input-email{
+  margin-bottom: 22px;
+}
+.btn-primary {
+  background-color: var(--hospital-green);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  font-size: var(--md);
+  font-weight: bold;
+  height: 50px;
+}
+.btn-login{
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+/* Seleccionador de pais */
+.select-country{
+  display: grid !important;
+  grid-template-columns: repeat(3,auto);
+  grid-template-rows: auto auto;
+  margin-bottom: 4px;
+}
+
+.select-country input[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.select-country input[type=radio] + img {
+  cursor: pointer;
+  width: 48px;
+  margin-bottom: 8px;
+}
+
+.select-country input[type=radio]:checked + img {
+  outline: 2px solid rgb(0, 102, 255);
+  border-radius: 50%;
+}
+
+#document-type {
+  border-radius: 8px;
+  height: 32px;
+  font-size: var(--md);
+  padding: 6px;
+  margin-bottom: 12px;
+}
+
