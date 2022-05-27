@@ -10,6 +10,9 @@ Una vez este en la carpeta clone el proyecto.
 ```
 C:\Users\user\..\carpeta> git clone https://github.com/sebitacio/Prueba.git
 ```
+```
+C:\Users\user\..\carpeta> cd Prueba
+```
 Ahora debe crear una virtual environment, iniciarlo y instalar los paquetes necesarios.
 ```
 C:\Users\user\..\Prueba> python -m venv env
